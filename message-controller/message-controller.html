@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- https://code.jquery.com/jquery-2.2.4.min.js -->
+    <script src="../external_modules/jquery-2.2.4.min.js"></script>
+    <!-- Angular jS from local source-->
+    <script src="../external_modules/angular.min.js"></script>
+    <script src="./message-controller.js"></script>
+    <link rel="stylesheet" href="./message-controller.css" />
+    <title>Message Board</title>
+  </head>>
+
+  <body ng-app="message-app">
+    <div>
+      
+      <div class="EmailsWrapper" ng-controller="message-controller">
+        <div class="EmailSearch">
+          <input type="text" placeholder="Search Messages" />
+        </div>
+
+        <!-- Print all messages -->
+        <div ng-repeat="m in messages" class="Email">
+          <div class="EmailTitle">
+            <p class="EmailTime"> {{ m.time }}</p>
+            <h1>{{ m.sender }}</h1>
+            <h2>{{ m.subject }}</h2>
+            <p class="EmailPreview">
+                {{ m.body }}
+            </p>
+          </div>
+        </div>
+
+
+        <!-- add a form to create new messages -->
+        <div>
+            <form ng-submit="addMessage()" class="EmailForm">
+                <input type="text" ng-model="m.sender" placeholder="Sender" class="EmailFormInput" />
+                <input type="text" ng-model="m.subject" placeholder="Subject" class="EmailFormInput" />
+                <textarea ng-model="m.body" placeholder="Message" class="EmailFormInput EmailFormTextarea"></textarea>
+                <button type="submit" class="EmailFormButton">Add Message</button>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

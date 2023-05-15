@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- GoogleAPIs AngularJS -->
+    <script src="../external_modules/angular.min.js"></script>
+    <script src="greeting-controller.js"></script>
+    <link rel="stylesheet" href="greeting-controller.css" />
+    <title>Basis Angular 03 - Greeting</title>
+  </head>
+
+  <body>
+    <div ng-app="greeting_app" class="greeting">
+      <div ng-controller="greeting_controller">
+        
+        <h1 ng-model="message">{{ !message ? "Hello Anonymous!" : message  }}</h1>
+
+        <input
+          type="text"
+          title="full_name"
+          placeholder="John Doe"
+          ng-model="full_name"
+          ng-change="on_change()"
+        />
+
+      </div>
+    </div>
+  </body>
+</html>

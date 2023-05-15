@@ -1,0 +1,194 @@
+* {
+  --bg-color-dark: #18182c;
+  --bg-color-light: #f2f2f2;
+  --text-color-dark: #fff;
+  --text-color-light: #18182c;
+}
+
+body {
+  background: var(--bg-color-light);
+  color: var(--text-color-light);
+  padding-top: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.EmailsWrapper {
+  height: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.EmailFull {
+  position: absolute;
+  top: 115px;
+  background-color: var(--text-color-dark);
+  color: var(--bg-color-dark);
+  height: 100%;
+  padding: 0px 25px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.EmailFull.active {
+  max-height: 453px;
+  overflow: scroll;
+}
+
+.EmailFull p {
+  line-height: 1.6em;
+}
+
+.EmailSearch {
+  width: 90%;
+  margin: auto;
+  padding: 65px 0px 20px 0px;
+  font-size: 18pt;
+  height: 50px;
+}
+
+.EmailSearch input {
+  width: 100%;
+  font-weight: 100;
+  outline: none;
+  background: transparent;
+  font-size: 14pt;
+  font-weight: bold;
+  height: 50px;
+  border: none;
+  padding: 15px 0px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+.EmailSearch input::-webkit-input-placeholder {
+  font-weight: 100;
+}
+
+.Email {
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 5px;
+  width: 100%;
+  max-width: 90%;
+  max-height: 100px;
+  overflow: hidden;
+  margin-top: 12px;
+  margin-left: 4vw;
+  transition: all 0.3s;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  position: relative;
+  opacity: 1;
+}
+
+.Email.active {
+  margin-top: -76px;
+  padding: 10px 0px;
+  z-index: 15;
+  max-width: 100%;
+  cursor: initial;
+  border-radius: 0px;
+}
+
+.Email.deactive {
+  max-height: 0px;
+  padding: 0px;
+  margin: 0px auto;
+  opacity: 0;
+}
+
+
+.EmailTitle {
+  margin-top: 10px;
+  margin-left: 4vw;
+  width: 80%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.EmailTitle .EmailTime {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 12px;
+  font-weight: 100;
+  margin: 0px;
+  padding: 5px;
+}
+
+.EmailTitle h1 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+  line-height: 1em;
+  font-weight: 500;
+  width: 100%;
+}
+
+.EmailTitle h2 {
+  margin: 0px;
+  padding: 10px 0px;
+  font-size: 12px;
+  line-height: 1em;
+  font-weight: 300;
+}
+
+.EmailTitle p.EmailPreview {
+  margin: 5px 0px;
+  max-height: 25px;
+  padding: 0px;
+  font-size: 12px;
+  font-weight: 100;
+  opacity: 0.8;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.Email.active .EmailTitle p.EmailPreview {
+  max-height: 0px;
+}
+
+.EmailForm {
+  width: 80vw;
+  padding: 0px 0px 20px 0px;
+  font-size: 18pt;
+  height: 50px;
+}
+
+.EmailFormInput {
+  width: 100%;
+  font-weight: 100;
+  outline: none;
+  background: transparent;
+  font-size: 14pt;
+  height: 50px;
+  border: none;
+  padding: 15px 0px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+.EmailFormTextArea {
+  width: 100%;
+  height: 400px;
+  outline: none;
+  background: transparent;
+  font-size: 14pt;
+  border: none;
+  padding: 15px 0px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+.EmailFormButton {
+  width: 100%;
+  font-weight: 100;
+  outline: none;
+  background: transparent;
+  font-size: 14pt;
+  height: 50px;
+  border: none;
+  padding: 15px 0px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
